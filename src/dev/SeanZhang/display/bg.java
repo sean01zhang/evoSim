@@ -45,7 +45,7 @@ public class bg extends javax.swing.JPanel {
         //draws image to the JPanel.
         try {
             if (bimage == null) {
-                bimage = IMAGE.getResizedImage(IMAGE.getBlurredImage(IMAGE.getBufferedImage("test1.png"), 5), getWidth(), getHeight());
+                bimage = IMAGE.getResizedImage(IMAGE.getBlurredImage(IMAGE.getBufferedImageURL("https://i.imgur.com/cUTC6eK.png"), 5), getWidth(), getHeight());
             } else {
                 g.drawImage(IMAGE.getResizedImage(bimage, getWidth(), getHeight()), WIDTH, HEIGHT, this);
             }

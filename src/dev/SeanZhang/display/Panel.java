@@ -28,7 +28,7 @@ import javax.swing.Timer;
 public class Panel extends javax.swing.JPanel {
 
     int xOffset;
-    int isGameEnd=0;
+    int isGameEnd=-1;
     Player p1, p2;
     int iterations;
     /*  These two fonts are the main two fonts that will be used in our program.
@@ -171,18 +171,18 @@ public class Panel extends javax.swing.JPanel {
             if(isGameEnd==0) {
                 g.drawString("Draw.", 10, g.getFontMetrics().getAscent());
                 g.setFont(subsubHeader);
-                g.drawString("By chance, you drew the game. Congrats.", 10, g.getFontMetrics(superHeader).getHeight()+10);
-                g.drawString("Press enter to exit.", 10, g.getFontMetrics(superHeader).getHeight()+g.getFontMetrics(subsubHeader).getAscent()+10);
+                g.drawString("By chance, you drew the game. Congrats.", 10, g.getFontMetrics(superHeader).getHeight()+20);
+                g.drawString("Press enter to exit.", 10, g.getFontMetrics(superHeader).getHeight()+g.getFontMetrics(subsubHeader).getAscent()+20);
             } else if(isGameEnd==1) {
-                g.drawString(p1.getName()+" wins.", 10, 10);
+                g.drawString(p1.getName()+" wins.", 10, g.getFontMetrics().getAscent());
                 g.setFont(subsubHeader);
-                g.drawString("Player One Wins. Sorry player 2, but life is unfair.", 10, g.getFontMetrics(superHeader).getHeight()+10);
-                g.drawString("Press enter to exit.", 10, g.getFontMetrics(superHeader).getHeight()+g.getFontMetrics(subsubHeader).getAscent()+10);
+                g.drawString("Player One Wins. Sorry player 2, but life is unfair.", 10, g.getFontMetrics(superHeader).getHeight()+20);
+                g.drawString("Press enter to exit.", 10, g.getFontMetrics(superHeader).getHeight()+g.getFontMetrics(subsubHeader).getAscent()+20);
             } else {
-                g.drawString(p2.getName()+" wins.", 10, 10);
+                g.drawString(p2.getName()+" wins.", 10, g.getFontMetrics().getAscent());
                 g.setFont(subsubHeader);
-                g.drawString("Player Two Wins. Sorry player 1, but life is unfair.", 10, g.getFontMetrics(superHeader).getHeight()+10);
-                g.drawString("Press enter to exit.", 10, g.getFontMetrics(superHeader).getHeight()+g.getFontMetrics(subsubHeader).getAscent()+10);
+                g.drawString("Player Two Wins. Sorry player 1, but life is unfair.", 10, g.getFontMetrics(superHeader).getHeight()+20);
+                g.drawString("Press enter to exit.", 10, g.getFontMetrics(superHeader).getHeight()+g.getFontMetrics(subsubHeader).getAscent()+20);
             }
         }
     }
@@ -376,10 +376,12 @@ public class Panel extends javax.swing.JPanel {
             //check for win as well
             if (p1.getPopulation() <= 0) {
                 t.stop();
+                isGameEnd=1;
                 System.out.println("P2 wins");
             }
             if (p2.getPopulation() <= 0) {
                 t.stop();
+                isGameEnd=2;
                 System.out.println("p1 wins");
             }
             if(iterations>10000) {

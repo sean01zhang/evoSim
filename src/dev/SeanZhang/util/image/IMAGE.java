@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -28,7 +29,8 @@ public class IMAGE {
     public static BufferedImage getBufferedImage(String name) {
         //accesses the image specified in the resources/images folder
         try {
-            return (ImageIO.read(new File("src/res/img/" + name)));
+            return (ImageIO.read(new File("dev/SeanZhang/display/" + name)));
+            
         } catch (IOException ex) {
             return null;
         }

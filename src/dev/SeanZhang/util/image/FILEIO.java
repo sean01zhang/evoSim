@@ -68,7 +68,7 @@ public class FILEIO {
      */
     public static String[] findAndReturn(String fName, String s, int detail, String delim) {
         //creates a new instance of file with the given path of the file.
-        File f = new File("src/Res/" + fName);
+        File f = new File("/Res/" + fName);
         //creates a scanner variable
         Scanner input;
         int count = -1;
