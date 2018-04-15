@@ -122,7 +122,7 @@ public class Panel extends javax.swing.JPanel {
         x += g.getFontMetrics(subsubHeader).getHeight();
         g.drawString("Population: " + p2.getPopulation(), 365, x);
         x += g.getFontMetrics(subsubHeader).getHeight();
-        g.drawString("Points: " + p2.getPoints(), 365, x);
+        g.drawString("Points (Press 'P' to Mutate): " + p2.getPoints(), 365, x);
 
         g.setFont(subHeader);
         //height of the bottom of resources word
@@ -376,12 +376,12 @@ public class Panel extends javax.swing.JPanel {
             //check for win as well
             if (p1.getPopulation() <= 0) {
                 t.stop();
-                isGameEnd=1;
+                isGameEnd=2;
                 System.out.println("P2 wins");
             }
             if (p2.getPopulation() <= 0) {
                 t.stop();
-                isGameEnd=2;
+                isGameEnd=1;
                 System.out.println("p1 wins");
             }
             if(iterations>10000) {
