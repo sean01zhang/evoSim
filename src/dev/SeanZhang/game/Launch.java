@@ -18,7 +18,7 @@ public class Launch {
     
         //Set true for graphics, false for no graphics
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
