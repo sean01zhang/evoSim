@@ -388,7 +388,7 @@ public class Panel extends javax.swing.JPanel {
                 isGameEnd=1;
                 System.out.println("p1 wins");
             }
-            if(iterations>10000) {
+            if(iterations>5000) {
                 t.stop();
                 if(p1.getPopulation()>p2.getPopulation()) {
                     isGameEnd=1;
