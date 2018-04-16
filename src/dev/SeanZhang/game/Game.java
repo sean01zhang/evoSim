@@ -25,7 +25,7 @@ public class Game implements Runnable {
     private final int turnLimit=1000;
     
     //this is the name of the window and the file directory of where the logo image is
-    private String title = "EvolutionSimulator", logo = "logo.png";
+    private String title = "EvolutionSimulator", logo = "logo3.png";
 
     //this boolean states whether this object is running or not.
     private boolean running = false;

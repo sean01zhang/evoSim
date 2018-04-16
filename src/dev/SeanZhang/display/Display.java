@@ -30,13 +30,6 @@ public class Display extends JFrame {
     
     Screen screen;
 
-    //this is the animation for the blue bar when the textfield is focused and unfocused
-    ImageIcon in = new ImageIcon(getClass().getResource("/Res/img/in.gif"));
-    ImageIcon out = new ImageIcon(getClass().getResource("/Res/img/out.gif"));
-
-    ImageIcon nextButtonDep = (new ImageIcon(getClass().getResource("/Res/img/nextButtonDep.png")));
-    ImageIcon nextButtonND = (new ImageIcon(getClass().getResource("/Res/img/nextButton.png")));
-
     //this the JPanel that will be responsible for all graphical drawing to the
     //screen in the program.
     private JPanel panel1;
