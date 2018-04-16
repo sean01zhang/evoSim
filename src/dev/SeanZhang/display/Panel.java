@@ -142,10 +142,13 @@ public class Panel extends javax.swing.JPanel {
 
         //p1 bar
         g.setColor(new Color(242, 101, 34));
+        g.fillOval(320, 20, 15, 15);
         g.fillRect(20, x + 10, (int) Math.round(660 * p1.getFood() * p1.getPopulation()), rectHeight / 2);
         g.fillRect(20, x + 10 + rectHeight / 2, (int) Math.round(660 * p1.getHabitat() * p1.getPopulation()), rectHeight / 2);
 
         g.setColor(new Color(236, 0, 140));
+        g.fillOval(665, 20, 15, 15);
+        
         g.fillRect(20 + (int) Math.round(660 * p1.getFood() * p1.getPopulation()), x + 10, (int) Math.round(660 * p2.getFood() * p2.getPopulation()), rectHeight / 2);
         g.fillRect(20 + (int) Math.round(660 * p1.getHabitat() * p1.getPopulation()), x + 10 + rectHeight / 2, (int) Math.round(660 * p2.getHabitat() * p2.getPopulation()), rectHeight / 2);
         //680,170
