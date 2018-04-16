@@ -188,10 +188,10 @@ public class Panel extends javax.swing.JPanel {
     }
 
     public void naturalD() {
-        int p1loss = (int) (p1.getPopulation() * p1.getHabitat() * p1.getPopulation());
+        int p1loss = (int) (p1.getPopulation() * p1.getHabitat()*10000 );
         System.out.println(p1loss);
         p1.setPopulation(p1.getPopulation() - p1loss);
-        int p2loss = (int) (p2.getPopulation() * p2.getHabitat() * p2.getPopulation());
+        int p2loss = (int) (p2.getPopulation() * p2.getHabitat() * 10000);
         p2.setPopulation(p2.getPopulation() - p2loss);
         Notification n = new Notification("Natural\nDisaster", "A natural disaster \noccured. Populations \nwith higher habitat "
                 + "\noccupancy will be more \nvunerable. Bottleneck \neffect has occured \n(Microevolution)\n\nCasualties: \n"
@@ -200,9 +200,9 @@ public class Panel extends javax.swing.JPanel {
     }
 
     public void famine() {
-        int p1loss = (int) (p1.getPopulation() * p1.getFood() * p1.getPopulation());
+        int p1loss = (int) (p1.getPopulation() * p1.getFood() * 10000);
         p1.setPopulation(p1.getPopulation() - p1loss);
-        int p2loss = (int) (p2.getPopulation() * p2.getFood() * p2.getPopulation());
+        int p2loss = (int) (p2.getPopulation() * p2.getFood() * 10000);
         p2.setPopulation(p2.getPopulation() - p2loss);
         Notification n = new Notification("Famine!", "Due to prolonged \nperiods of dryness, \nfood supply has been \nreduced. Bottleneck \neffect has occured \n(Microevolution)\n\nCasualties: \n"
                 + p1.getName() + " - " + p1loss + "\n" + p2.getName() + " - " + p2loss, Color.RED, Color.white);
@@ -210,12 +210,13 @@ public class Panel extends javax.swing.JPanel {
     }
 
     public void competition() {
-        double reduction = Math.random();
-        p1.setPopulation((int) (p1.getPopulation() * reduction));
-        p2.setPopulation((int) (p2.getPopulation() * reduction));
+        double reduction1 = Math.random();
+        double reduction2= Math.random();
+        p1.setPopulation((int) (p1.getPopulation() * reduction1));
+        p2.setPopulation((int) (p2.getPopulation() * reduction2));
 
         Notification n = new Notification("Competition  \nWithin\nPopulations", "Due to limited supply of \nresources, populations \nwill be reduced in \nresponse.\n\nCasualties: \n"
-                + p1.getName() + " - " + (int) (p1.getPopulation() * (1 - reduction)) + "\n" + p2.getName() + " - " + (int) (p2.getPopulation() * (1 - reduction)),
+                + p1.getName() + " - " + (int) (p1.getPopulation() * (1 - reduction1)) + "\n" + p2.getName() + " - " + (int) (p2.getPopulation() * (1 - reduction2)),
                 Color.YELLOW, Color.BLACK);
 
         alert.add(n);
@@ -356,7 +357,7 @@ public class Panel extends javax.swing.JPanel {
             updatePlayerStats();
 
             //add points for every 1000 turns
-            if (iterations % 500 == 0) {
+            if (iterations % 200 == 0) {
                 p1.setPoints(p1.getPoints() + 1);
                 p2.setPoints(p2.getPoints() + 1);
             }
